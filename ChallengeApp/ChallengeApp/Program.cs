@@ -1,23 +1,29 @@
-﻿var name = "Ew";
-var age = 50;
-var gender = "Kobieta";
+﻿
+using System.Security.Cryptography.X509Certificates;
 
 
+    double liczba = 10011556987;
+    string numberInString = liczba.ToString();
+    char[] znaki = numberInString.ToArray();
+    char[] cyfra = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+    int[] licznik = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    for (int i = 0; i < znaki.Length; i++)
+    {
+        for (int z = 0; z < cyfra.Length; z++)
+        {
+            if (znaki[i] == cyfra[z])
+            {
+                licznik[z]++;
 
+            }
 
-if(gender == "Kobieta" && age < 30)
-{
-    Console.WriteLine("Kobieta poniżej 30 lat");
-}
-else if (name == "Ewa" && age == 33)
-{
-    Console.WriteLine("Ewa, lat 33");
-}
-else if (gender == "Mężczyzna" && age < 18)
-{
-    Console.WriteLine("Niepełnoletni Mężczyzna");
-}
-else
-{
-    Console.WriteLine("Żaden warunek nie został spełniony");
-}
+        }
+         
+
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        Console.WriteLine("Cyfr  " + i + " jest " + (licznik[i]));
+    }
+    
